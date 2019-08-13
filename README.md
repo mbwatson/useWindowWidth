@@ -67,7 +67,6 @@ Then they can be conditionally rendered as show below:
         { windowWidth <= SM && <MobileMenu /> }
         { windowWidth > SM && <Menu /> }
     </div>
-    )
 }
 ```
 
@@ -77,8 +76,4 @@ or
     <div>
         { windowWidth <= SM ? <MobileMenu /> : <Menu /> }
     </div>
-    )
-}
-
-
 ```
