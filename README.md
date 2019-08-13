@@ -24,11 +24,13 @@ export const SomeComponent = ({ children }) => {
 }
 ```
 
-The `windowWidth variable is a number corresponding to the window widht in pixels, that one would obtain from `window.innerWidth`. The size variables are integers corresponding to common breakpoints.
+The `windowWidth variable is a number corresponding to the window width in pixels, that one would obtain from `window.innerWidth`. The size variables are integers corresponding to common breakpoints.
 
-Three examples follow illustrating common use cases.
+Commonly, this would be used for conditional rendering.
 
-## 1. Alter inline styles according to window width
+## Conditional Rendering
+
+### 1. Alter inline styles according to window width
 
 ```jsx
 //...
@@ -42,7 +44,7 @@ Three examples follow illustrating common use cases.
 </ul>
 ```
 
-## 2. Pass window-width-based booleans to styled components
+### 2. Pass window-width-based booleans to styled components
 
 ```jsx            
 const Block = styled.div`
@@ -56,7 +58,7 @@ const SomeComponent = props => (
 )
 ```
 
-## 3. Conditionally show different components based on window size
+### 3. Render ifferent components based on window size
 
 Suppose you have two menus--a mobile menu component called `<MobileMenu />` and a menu component for larger screens called `<Menu />`.
 
@@ -76,4 +78,26 @@ or
     <div>
         { windowWidth <= SM ? <MobileMenu /> : <Menu /> }
     </div>
+```
+
+## Rendering the Size of the Window
+
+Of course, the window width can be output directly as shown below.
+
+```jsx
+<p>This window is { windowWidth } pixels wide</p>
+```
+
+Alternatively, it may be useful (at least for debuggin) to display the window size, as shown here.
+
+```jsx
+<div>
+    The window size is {
+        windowWidth <= XS ? 'extra small'
+            : windowWidth <= SM ? 'small'
+            : windowWidth <= MD ? 'medium'
+            : windowWidth <= LG ? 'large'
+            : 'extra large'
+    }.
+</div>
 ```
