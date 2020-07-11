@@ -23,12 +23,12 @@ export const useWindowWidth = (initialWidth = defaultWidth) => {
     }, [])
     
     useEffect(() => {
-        const handleResize = () => setWindowWidth(window.innerWidth)
+        const handleResize = () => setWidth(window.innerWidth)
         window.addEventListener('resize', handleResize)
         return () => {
             window.removeEventListener('resize', handleResize)
         }
-    })
+    }, [])
     
     return { windowWidth, XS, SM, MD, LG }
 }
