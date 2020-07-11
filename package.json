@@ -1,6 +1,6 @@
 {
   "name": "@mwatson/usewindowwidth",
-  "version": "1.0.4",
+  "version": "1.0.4-1",
   "description": "React hook to expose window width breakpoints",
   "main": "index.js",
   "scripts": {
